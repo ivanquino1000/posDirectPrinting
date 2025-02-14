@@ -1,0 +1,40 @@
+{
+  "manifest_version": 3,
+  "name": "Pos-Utils",
+  "version": "0.1.0",
+  "permissions": ["activeTab", "scripting", "management", "nativeMessaging"],
+  "description": "Adds some custom functions over the main web-UI \n Instant-Print: emulates user inputs for each payment option",
+
+  "icons": {
+    "48": "/icon/main.png",
+    "16": "/icon/main.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://soraza.arca.digital/pos",
+        "https://larico.arca.digital/pos",
+        "https://grie.arca.digital/pos",
+        "https://rq.arca.digital/pos",
+        "https://gri.arca.digital/pos"
+      ],
+      "js": [
+        "utils.js",
+        "allowedActions.js",
+        "action.js",
+        "paymentController.js",
+        "main.js"
+      ]
+    }
+  ],
+  "background": {
+    "service_worker": "content.js"
+  },
+
+  "action": {
+    "default_icon": {
+      "16": "/icon/main.png"
+    },
+    "default_title": "POS_Utils"
+  }
+}
