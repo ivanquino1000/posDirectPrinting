@@ -32,7 +32,7 @@ class PaymentFlowController {
     if (this.triggerEvents.includes(event)) {
       console.log("eventHandler: ", event);
       let action = this.findAction(event);
-      action.execute();
+      action.execute()
     }
   }
 

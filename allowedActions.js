@@ -82,6 +82,13 @@ const allowed_actions = [
         return;
       }
 
+
+      const tooltips = document.getElementsByClassName('notifications');
+      for (var i = tooltips.length - 1; i >= 0; --i) {
+        tooltips[i].remove();
+      }
+
+
       const saleNoteBtn = getElementByText("N. VENTA");
 
       if (saleNoteBtn) {

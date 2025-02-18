@@ -89,6 +89,12 @@ window.onload = function () {
     saleNoteBtn.click();
   }
 
+  const tooltips = document.getElementsByClassName('notifications');
+  for (var i = tooltips.length - 1; i >= 0; --i) {
+    tooltips[i].remove();
+  }
+
+
   const posPaymentBtn = getElementByText(
     "PAGAR",
     "el-button submit btn btn-block btn-primary"
@@ -107,7 +113,7 @@ window.onload = function () {
     });
   }
   mainObserver.observe(mainContainer, config);
-  createSwith();
+  //createSwith();
 };
 
 function createSwith() {
