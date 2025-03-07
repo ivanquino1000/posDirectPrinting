@@ -75,7 +75,7 @@ const allowed_actions = [
       );
 
       if (newSellBtn) {
-        newSellBtn.click();
+        //newSellBtn.click();
         mainObserver.disconnect();
       } else {
         console.log("error newSellBtn not found");

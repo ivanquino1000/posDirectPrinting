@@ -8,7 +8,6 @@ const config = {
   attributes: true,
   childList: true,
   subtree: true,
-  characterData: true,
 };
 
 var paymentExecutor = new PaymentFlowController();
@@ -51,9 +50,17 @@ function quickPrint(mutationList) {
       case "el-message-box__wrapper msgbox-fade-enter-active msgbox-fade-enter-to":
         renderEventList.add("confirmationPopupLoaded");
         break;
-      // event: print pdf window opens
+
+      /* // event: print pdf window opens
       case "el-dialog__wrapper":
         renderEventList.add("printPanelLoaded");
+        break; */
+
+      // event: print pdf window opens
+      case "":
+        if (m.attributeName == 'src') {
+          renderEventList.add("printPanelLoaded");
+        }
         break;
     }
     if (renderEventList.size > 0) {
@@ -155,6 +162,15 @@ function mutationLogger(mutationList) {
   const attrMap = new Map();
 
   mutationList.forEach((m) => {
+
+    /* console.log([m.type], " \n", [m.target.className], " \n", {
+      type: m.type,
+      attributeName: m.attributeName,
+      characterData: m.characterData,
+      attributeOldValue: m.attributeOldValue,
+      src: Object.assign({},
+        ...Array.from(m.target.attributes, ({name, value}) => ({[name]: value})))
+    }); */
     if (m.type === "childList") {
       // skip non addded nodes
       if (!m.addedNodes || m.addedNodes.length === 0) {
