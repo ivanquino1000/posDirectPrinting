@@ -94,6 +94,14 @@ const allowed_actions = [
       if (saleNoteBtn) {
         saleNoteBtn.click();
       }
+
+      const textboxSelector = 'input[type="text"][placeholder="Buscar productos por codigo de barras"]';
+      const inputProduct = document.querySelector(textboxSelector);
+
+      if (inputProduct) {
+        inputProduct.focus();
+      }
+
       const posPaymentBtn = getElementByText(
         "PAGAR",
         "el-button submit btn btn-block btn-primary"

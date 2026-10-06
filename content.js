@@ -1,5 +1,5 @@
 
-/* 
+/*
 
 // //////////////////////////////////////////////////////////
 const todo = document.getElementsByClassName("container-fluid p-0")[0];
@@ -267,7 +267,7 @@ function print(m) {
               const docTypeF = getElementByText("FACTURA");
               const docTypeB = getElementByText("BOLETA");
               const docTypeN = getElementByText("N. VENTA");
-  
+
               switch (actionBt) {
                 case "F9":
                   docTypeN.click();
@@ -284,13 +284,13 @@ function print(m) {
               console.log("not button: " + e);
             }
             break;
-  
+
           // click payment button
           case "el-select-dropdown el-popper":
             try {
               const pay = getElementByText("PAGAR");
               setTimeout(pay.click(), 3000);
-  
+
               const confirm = document.getElementsByClassName(
                 "el-button el-button--default el-button--small el-button--primary"
               )[0]; // getElementByText("SI");
@@ -299,7 +299,7 @@ function print(m) {
               console.log("not button: " + e);
             }
             break;
-  
+
           // click payment button
           case "card-body":
             try {
@@ -309,7 +309,7 @@ function print(m) {
               console.log("not button: " + e);
             }
             break;
-  
+
           // print receipt
           case "el-dialog x-modal-container":
             try {
@@ -326,4 +326,3 @@ function print(m) {
       }
     }
   }
-  

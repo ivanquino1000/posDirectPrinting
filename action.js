@@ -17,7 +17,7 @@ class Action {
       this.result = "success";
     } catch (e) {
       this.result = "failed";
-      console.error("action cb error: \n", e);
+      console.error("action error: \n", e);
     }
   }
 }

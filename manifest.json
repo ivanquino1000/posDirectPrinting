@@ -16,7 +16,9 @@
         "https://larico.arca.digital/pos",
         "https://grie.arca.digital/pos",
         "https://rq.arca.digital/pos",
-        "https://gri.arca.digital/pos"
+        "https://gri.arca.digital/pos",
+        "https://ranty.arca.digital/pos",
+        "https://jaiki.arca.digital/pos"
       ],
       "js": [
         "utils.js",

@@ -239,7 +239,7 @@ function bindKeyActions() {
       case "F9":
       case "F10":
         e.preventDefault();
-        observer1.disconnect();
+        //observer1.disconnect();
         break;
     }
   });
@@ -274,6 +274,7 @@ init = function (a) {
       firstListClient.click();
       paymentBtn.click();
     } else {
+      //  F7-F8 keybindings just expect an already aggregated client
       paymentBtn.click();
     }
     mainObserver.observe(mainContainer, config);
