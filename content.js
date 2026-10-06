@@ -256,6 +256,8 @@ function talk(m) {
 }
  */
 
+
+/*  main observer callback function    */
 function print(m) {
     for (m of m) {
       if (m.addedNodes.length > 0 && m.addedNodes.length <= 1) {

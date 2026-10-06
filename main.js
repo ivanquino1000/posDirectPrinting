@@ -269,14 +269,39 @@ init = function (a) {
 
     const paymentBtn = getElementByText("PAGAR");
 
-    if (a == "F9" || a == "F10") {
-      clientDropdown.click();
-      firstListClient.click();
-      paymentBtn.click();
-    } else {
-      //  F7-F8 keybindings just expect an already aggregated client
-      paymentBtn.click();
+    const docTypeF = getElementByText("FACTURA");
+    const docTypeB = getElementByText("BOLETA");
+    const docTypeN = getElementByText("N. VENTA");
+
+    // previous actions before paying
+    // none select a client
+    switch (a) {
+      case "F7": //factura
+        docTypeF.click();
+        break;
+      case "F8":  //libre - no pre-actions
+
+        break;
+      case "F9":  //nota venta
+        docTypeN.click();
+        break;
+      case "F10": //boleta
+        docTypeB.click();
+        break;
+
     }
+    paymentBtn.click();
+
+    //if (a == "F9" || a == "F10") {
+    //  clientDropdown.click();
+    //  firstListClient.click();
+    //  paymentBtn.click();
+    //} else {
+    //  //  F7-F8 keybindings just expect an already aggregated client
+    //  docTypeB.click();
+    //  paymentBtn.click();
+    //}
+
     mainObserver.observe(mainContainer, config);
   } catch (e) {
     console.log("BUTTON ERROR" + e);
